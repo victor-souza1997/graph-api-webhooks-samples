@@ -1,0 +1,27 @@
+{
+  "name": "Souzatech WhatsApp Webhook",
+  "description": "Webhook para integração com a API do WhatsApp Graph, rodando em Heroku",
+  "repository": "https://github.com/victor-souza1997/graph-api-webhooks-samples",
+  "keywords": ["node", "express", "whatsapp", "webhook", "meta", "graph-api"],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "VERIFY_TOKEN": {
+      "description": "Token usado pelo Meta para validar o webhook",
+      "value": "AKEMAP"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "addons": [],
+  "scripts": {
+    "postdeploy": "echo 'Deploy concluído. Pronto para validar o webhook!'"
+  }
+}
